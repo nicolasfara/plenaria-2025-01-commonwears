@@ -1,0 +1,9 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "typst",
+            "scheme": "file",
+            "pattern": "presentation-2024-acsos-multi-tier-field-based-applications.typ"
+        }
+    ]
+}
