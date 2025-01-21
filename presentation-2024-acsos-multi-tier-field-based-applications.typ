@@ -47,8 +47,8 @@
 #let authors = block(inset: 0.1em)[
   #table(inset: 0.5em, stroke: none, columns: (auto, 4fr),  align: (left, left),
     [#alert[*Nicolas Farabegoli*]], [#mail("nicolas.farabegoli@unibo.it")],
-    [Mirko Viroli], [#mail("mirko.viroli@unibo.it")],
-    [Roberto Casadei], [#mail("roby.casadei@unibo.it")],
+    // [Mirko Viroli], [#mail("mirko.viroli@unibo.it")],
+    // [Roberto Casadei], [#mail("roby.casadei@unibo.it")],
   )
   #place(right, dy:-1em)[
     #figure(image("images/disi.svg", width:40%))
@@ -62,10 +62,10 @@
 
 #title-slide(
   title: [
-    Flexible Self-organisation for the Cloud-Edge Continuum: \
-    a Macro-programming Approach
+    Flexible Self-organisation for the Cloud-Edge Continuum \
+    // a Macro-programming Approach
   ],
-  // subtitle: "Subtitle",
+  subtitle: [_Plenaria *PRIN Commonwears* 2025 \@ Rome_],
   author: authors,
   // date: datetime.today().display("[day] [month repr:long] [year]"),
 )
@@ -90,114 +90,164 @@
   #align(center)[#underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") as a way to define such applications.]
 ]
 
-#slide(title: "Self-org Computational Model")[
-  #alert[Behaviour]: _repeated_ execution with #underline[async rounds] \
-  #alert[Interaction]: _repeated_ *neighbours* #underline[messages exchange] \
-  #alert[Alignment]: each device execution is *aligned* with the others (program _AST_ alignment)
+// #slide(title: "Self-org Computational Model")[
+//   #alert[Behaviour]: _repeated_ execution with #underline[async rounds] \
+//   #alert[Interaction]: _repeated_ *neighbours* #underline[messages exchange] \
+//   #alert[Alignment]: each device execution is *aligned* with the others (program _AST_ alignment)
 
-  #line(length: 100%, stroke: 0.05em + rgb("#23373b"))
+//   #line(length: 100%, stroke: 0.05em + rgb("#23373b"))
 
-  #only(1)[
-    1. Receiving #alert[messages] from neighbours
-    #figure(image("images/ac-messages-perception.svg", width: 74%))
-  ]
-  #only(2)[
-    2. Computation of the #alert[macro-program] against the received messages
-    #figure(image("images/ac-computation.svg", width: 74%))
-  ]
-  #only(3)[
-    3. Sending to neighbours the #alert[computed messages]
-    #figure(image("images/ac-messages-propagation.svg", width: 74%))
-  ]
-  #only(4)[
-    4. Sleep until next #alert[round]...
-    #figure(image("images/ac.svg", width: 74%))
-  ]
-]
+//   #only(1)[
+//     1. Receiving #alert[messages] from neighbours
+//     #figure(image("images/ac-messages-perception.svg", width: 74%))
+//   ]
+//   #only(2)[
+//     2. Computation of the #alert[macro-program] against the received messages
+//     #figure(image("images/ac-computation.svg", width: 74%))
+//   ]
+//   #only(3)[
+//     3. Sending to neighbours the #alert[computed messages]
+//     #figure(image("images/ac-messages-propagation.svg", width: 74%))
+//   ]
+//   #only(4)[
+//     4. Sleep until next #alert[round]...
+//     #figure(image("images/ac.svg", width: 74%))
+//   ]
+// ]
 
 // Slide sul gradiente
 
-#slide(title: [Distributed gradient])[
-  #side-by-side(columns: (1fr, 1fr))[
-    ```scala
-    def gradient(source: Boolean): Int = 
-      rep(PositiveInfinity): distance =>
-        mux(source)(0)(1 + minHood(nbr(distance)))
-    ```
+// #slide(title: [Distributed gradient])[
+//   #side-by-side(columns: (1fr, 1fr))[
+//     ```scala
+//     def gradient(source: Boolean): Int = 
+//       rep(PositiveInfinity): distance =>
+//         mux(source)(0)(1 + minHood(nbr(distance)))
+//     ```
 
-    This function computes the distance from a #alert[source]
-    device to all the other devices in the network.
+//     This function computes the distance from a #alert[source]
+//     device to all the other devices in the network.
 
-    More complex *collective* components are built leveraging the #alert[gradient] function.
-  ][
-    #only(1)[
-      #figure(image("images/gradient-1.svg"))
-    ]
-    #only(2)[
-      #figure(image("images/gradient-1b.svg"))
-    ]
-    #only(3)[
-      #figure(image("images/gradient-2.svg"))
-    ]
-    #only(4)[
-      #figure(image("images/gradient-2b.svg"))
-    ]
-    #only(5)[
-      #figure(image("images/gradient-3.svg"))
-    ]
-    #only(6)[
-      #figure(image("images/gradient-4.svg"))
-    ]
-    #only(7)[
-      #figure(image("images/gradient-4b.svg"))
-    ]
-    #only(8)[
-      #figure(image("images/gradient-5.svg"))
-    ]
-    #only(9)[
-      #figure(image("images/gradient-5b.svg"))
-    ]
-    #only(10)[
-      #figure(image("images/gradient-6.svg"))
-    ]
-  ]
-]
+//     More complex *collective* components are built leveraging the #alert[gradient] function.
+//   ][
+//     #only(1)[
+//       #figure(image("images/gradient-1.svg"))
+//     ]
+//     #only(2)[
+//       #figure(image("images/gradient-1b.svg"))
+//     ]
+//     #only(3)[
+//       #figure(image("images/gradient-2.svg"))
+//     ]
+//     #only(4)[
+//       #figure(image("images/gradient-2b.svg"))
+//     ]
+//     #only(5)[
+//       #figure(image("images/gradient-3.svg"))
+//     ]
+//     #only(6)[
+//       #figure(image("images/gradient-4.svg"))
+//     ]
+//     #only(7)[
+//       #figure(image("images/gradient-4b.svg"))
+//     ]
+//     #only(8)[
+//       #figure(image("images/gradient-5.svg"))
+//     ]
+//     #only(9)[
+//       #figure(image("images/gradient-5b.svg"))
+//     ]
+//     #only(10)[
+//       #figure(image("images/gradient-6.svg"))
+//     ]
+//   ]
+// ]
 
-#slide(title: [Distributed gradient])[
-  #side-by-side(columns: (1fr, 1fr))[
-    ```scala
-    def gradient(source: Boolean): Int = 
-      rep(PositiveInfinity): distance =>
-        mux(source)(0)(1 + minHood(nbr(distance)))
-    ```
+// #slide(title: [Distributed gradient])[
+//   #side-by-side(columns: (1fr, 1fr))[
+//     ```scala
+//     def gradient(source: Boolean): Int = 
+//       rep(PositiveInfinity): distance =>
+//         mux(source)(0)(1 + minHood(nbr(distance)))
+//     ```
 
-    This function computes the distance from a #alert[source]
-    device to all the other devices in the network.
+//     This function computes the distance from a #alert[source]
+//     device to all the other devices in the network.
 
-    More complex *collective* components are built leveraging the #alert[gradient] function.
-  ][
-    #only(1)[
-      #figure(image("images/gradient-6b.svg"))
-    ]
-    #only(2)[
-      #figure(image("images/gradient-7.svg"))
-    ]
-    #only(3)[
-      #figure(image("images/gradient-7b.svg"))
-    ]
-    #only(4)[
-      #figure(image("images/gradient-8.svg"))
-    ]
-    #only(5)[
-      #figure(image("images/gradient-8b.svg"))
-    ]
-  ]
-]
+//     More complex *collective* components are built leveraging the #alert[gradient] function.
+//   ][
+//     #only(1)[
+//       #figure(image("images/gradient-6b.svg"))
+//     ]
+//     #only(2)[
+//       #figure(image("images/gradient-7.svg"))
+//     ]
+//     #only(3)[
+//       #figure(image("images/gradient-7b.svg"))
+//     ]
+//     #only(4)[
+//       #figure(image("images/gradient-8.svg"))
+//     ]
+//     #only(5)[
+//       #figure(image("images/gradient-8b.svg"))
+//     ]
+//   ]
+// ]
 
-#slide(title: "Aggregate Programming")[
+// #slide(title: "Aggregate Programming")[
 
-  #side-by-side(columns: (2fr, auto))[
-    == Field Composition
+//   #side-by-side(columns: (2fr, auto))[
+//     == Field Composition
+//     ```scala
+//     def channel(source: Boolean, destination: Boolean): Boolean {
+//       val toSource = gradient(source) // Field[Double]
+//       val toDestination = gradient(destination) // Field[Double]
+//       val distance = distanceTo(source, destination)
+//       (toSource + toDestination - distance) <= 10
+//     }
+//     ```
+
+//     Functions take *fields* as #alert[input] and return *field* as #alert[output].
+//   ][
+//     #figure(image("images/channel.svg", height: 50%))
+//   ]
+
+//   //#v(0.5em)
+
+//   #side-by-side(columns: (auto, auto), gutter: 2em)[
+//     _Aggregate Computing_ provide us #alert[formal guarantees] on functional composition: reference for *deployment validation*.
+//   ][
+//     The entire (_macro_-)program is executed by #alert[all the devices] in the network, \
+//     assuming that each device *should* execute #alert[all] the functions.
+//   ]
+// ]
+
+// #slide(title: "Edge-Cloud Continuum")[
+//   #side-by-side(gutter: 2em, columns: (2fr, auto))[
+//     #quote[Aggregation of #alert[computational resources] along the data path from the *edge* to the *cloud* #fcite("DBLP:journals/access/MoreschiniPLNHT22")]
+
+//     #v(1em)
+
+//     We must deal with different #alert[capabilities] and #alert[constraints]:
+//     - #alert[edge devices]:
+//       - used for #underline[sensing/acting] over the (physical) environment
+//       - but they are typically *resources-constrained*
+//     - #alert[cloud instances]:
+//       - offer #underline[scalability] and #underline[computational power]
+//       - but introduce *latency/privacy* issues
+//   ][
+//     #figure(image("images/edge-cloud-continuum.svg", height: 80%))
+//   ]
+
+//   // #align(center)[
+//   //   The #alert[opportunistic] use of the _continuum_ offers new possibilities, \
+//   //   but requires fexible #alert[deployment] strategies.
+//   // ]
+// ]
+
+#slide(title: "Collective System in the Cloud-edge Continuum")[
+  #side-by-side(columns: (2fr, auto), gutter: 2em)[
+    ==== Collective program specification
     ```scala
     def channel(source: Boolean, destination: Boolean): Boolean {
       val toSource = gradient(source) // Field[Double]
@@ -206,43 +256,27 @@
       (toSource + toDestination - distance) <= 10
     }
     ```
+    #side-by-side(columns: (1fr, auto), gutter: 2em)[
+      - Functions *composition*
+      - _(macro)_program executed by #alert[all the end-devices]
 
-    Functions take *fields* as #alert[input] and return *field* as #alert[output].
+      #only("2")[
+        #align(center)[
+          How to _intelligently_ exploit the #alert[#underline[continuum]]?
+        ]
+      ]
+    ][
+      #figure(image("images/channel.svg", height: 45%))
+    ]
   ][
-    #figure(image("images/channel.svg", height: 50%))
+    ==== Edge-Cloud Continuum
+    #only("1")[
+      #figure(image("images/ac-monolithic-motivation.svg", height: 80%))
+    ]
+    #only("2")[
+      #figure(image("images/edge-cloud-continuum.svg", height: 80%))
+    ]
   ]
-
-  //#v(0.5em)
-
-  #side-by-side(columns: (auto, auto), gutter: 2em)[
-    _Aggregate Computing_ provide us #alert[formal guarantees] on functional composition: reference for *deployment validation*.
-  ][
-    The entire (_macro_-)program is executed by #alert[all the devices] in the network, \
-    assuming that each device *should* execute #alert[all] the functions.
-  ]
-]
-
-#slide(title: "Edge-Cloud Continuum")[
-  #side-by-side(gutter: 2em, columns: (2fr, auto))[
-    #quote[Aggregation of #alert[computational resources] along the data path from the *edge* to the *cloud* #fcite("DBLP:journals/access/MoreschiniPLNHT22")]
-
-    #v(1em)
-
-    We must deal with different #alert[capabilities] and #alert[constraints]:
-    - #alert[edge devices]:
-      - used for #underline[sensing/acting] over the (physical) environment
-      - but they are typically *resources-constrained*
-    - #alert[cloud instances]:
-      - offer #underline[scalability] and #underline[computational power]
-      - but introduce *latency/privacy* issues
-  ][
-    #figure(image("images/edge-cloud-continuum.svg", height: 80%))
-  ]
-
-  // #align(center)[
-  //   The #alert[opportunistic] use of the _continuum_ offers new possibilities, \
-  //   but requires fexible #alert[deployment] strategies.
-  // ]
 ]
 
 #new-section-slide("Motivation")
@@ -322,33 +356,33 @@
 
     #figure(image("images/message-propagation.svg", height: 52%))
 
-    _Execution model_ *formalised* via #alert[operational semantics].
+    _Execution model_ *formalised* via #alert[#underline[operational semantics]].
     // The #alert[main goals] of this execution model are (#underline[formalised in the paper]):
     // - #alert[deployment independent] macro-program specification
     // - #alert[self-stabilising] #fcite("DBLP:journals/tomacs/ViroliABDP18") property is preserved w.r.t. the "monolithic" deployment
 
 ]
 
-#slide(title: "Deployment independence of self-stabilising computations")[
-  #only(1)[
-    #theorem(number: "1", [Self-stabilisation #fcite("DBLP:journals/tomacs/ViroliABDP18")])[
-      Given a $mono("MP")$ defining the components $mono(C)_1, #math.dots, mono(C)_n$ and a #underline[correct deployment], then, if:
+// #slide(title: "Deployment independence of self-stabilising computations")[
+//   #only(1)[
+//     #theorem(number: "1", [Self-stabilisation #fcite("DBLP:journals/tomacs/ViroliABDP18")])[
+//       Given a $mono("MP")$ defining the components $mono(C)_1, #math.dots, mono(C)_n$ and a #underline[correct deployment], then, if:
 
-      + all components implement #alert[self-stabilising] computation, and
-      + sensor state is #alert[uniform] across all the #underline[forward chains]
+//       + all components implement #alert[self-stabilising] computation, and
+//       + sensor state is #alert[uniform] across all the #underline[forward chains]
 
-      then the result behaviour observed at the #underline[global output ports] is #alert[self-stabilising], and it is independently from the #alert[deployment] (same result of the *monolithic*).
-    ]
-  ]
-  #only(2)[
-    #proof("(base on operational semantics)")[
-      - No forwarding $#math.arrow$ same as #underline[monolithic] $#math.arrow$ #alert[true] as per#super("4")
-      - If only #underline[1] component $#math.arrow$ #alert[true] by #underline[hypotesis] (self-stabilising components)
-      - If #underline[multiple] components, #alert[true] as per #underline[functional composition]#fcite("DBLP:journals/tomacs/ViroliABDP18") of components
-      - If #underline[forward chain] > 1, and each device fairily #alert[fires], it is guaranteed that the message travels from #underline[source] to #underline[destination] and back $#math.arrow$ #alert[true] since the input messages are eventually the same
-    ]
-  ]
-]
+//       then the result behaviour observed at the #underline[global output ports] is #alert[self-stabilising], and it is independently from the #alert[deployment] (same result of the *monolithic*).
+//     ]
+//   ]
+//   #only(2)[
+//     #proof("(base on operational semantics)")[
+//       - No forwarding $#math.arrow$ same as #underline[monolithic] $#math.arrow$ #alert[true] as per#super("4")
+//       - If only #underline[1] component $#math.arrow$ #alert[true] by #underline[hypotesis] (self-stabilising components)
+//       - If #underline[multiple] components, #alert[true] as per #underline[functional composition]#fcite("DBLP:journals/tomacs/ViroliABDP18") of components
+//       - If #underline[forward chain] > 1, and each device fairily #alert[fires], it is guaranteed that the message travels from #underline[source] to #underline[destination] and back $#math.arrow$ #alert[true] since the input messages are eventually the same
+//     ]
+//   ]
+// ]
 
 #slide(title: "Rescue scenario: partitioned macro-program")[
   #figure(image("images/rescue-scenario.svg"))
@@ -379,30 +413,54 @@
   Empirically prove #alert[functional equivalence] w.r.t. the *monolithic deployment*, and #alert[non-functional benefits] of the approach.
 ]
 
-#slide(title: "Results: gradient convergence")[
-  #figure(image("images/gradient_convergence.svg", width: 80%))
-  #figure(image("images/gradient_convergence_error.svg", width: 80%))
+// #slide(title: "Results: gradient convergence")[
+//   #figure(image("images/gradient_convergence.svg", width: 80%))
+//   #figure(image("images/gradient_convergence_error.svg", width: 80%))
   
+//   #align(center)[
+//     When $t = 900$ the network stabilises, and the output converges to #alert[the same result].
+//   ]
+// ]
+
+// #slide(title: "Results: SCR convergence")[
+//   #figure(image("images/scr_convergence.svg", width: 80%))
+//   #figure(image("images/scr_convergence_error.svg", width: 80%))
+
+//   #align(center)[
+//     When $t = 900$ the network stabilises, and the output converges to #alert[the same result].
+//   ]
+// ]
+
+// #slide(title: "Results: rescue scenario")[
+//   #figure(image("images/power_consumption.svg"))
+
+//   #align(center)[
+//     The #alert[modularisation] of the macro-program allows to #alert[reduce] the #alert[energy consumption] of the devices, but more messages are exchanged.
+//   ]
+// ]
+
+#slide(title: "Results")[
   #align(center)[
-    When $t = 900$ the network stabilises, and the output converges to #alert[the same result].
+    / Condition: at time $t=900$, the node stop moving
+
+    #v(1em)
+
+    #side-by-side(columns: (1fr, 1fr))[
+
+      === Gradient & SCR convergence
+      #v(1em)
+
+      - Delay in #alert[convergence] #h(1em) #fa-clock()
+      - The #alert[same final result] #h(1.2em) #fa-check-circle()
+    ][
+      === Rescue scenario
+      #v(1em)
+
+      - More #alert[messages] exchanged #h(1em) #fa-exchange-alt()
+      - Better #alert[energy consumption] #h(1.2em) #fa-battery-half()    
+    ]
   ]
-]
-
-#slide(title: "Results: SCR convergence")[
-  #figure(image("images/scr_convergence.svg", width: 80%))
-  #figure(image("images/scr_convergence_error.svg", width: 80%))
-
-  #align(center)[
-    When $t = 900$ the network stabilises, and the output converges to #alert[the same result].
-  ]
-]
-
-#slide(title: "Results: rescue scenario")[
   #figure(image("images/power_consumption.svg"))
-
-  #align(center)[
-    The #alert[modularisation] of the macro-program allows to #alert[reduce] the #alert[energy consumption] of the devices, but more messages are exchanged.
-  ]
 ]
 
 #new-section-slide("Conclusions")
