@@ -1,6 +1,6 @@
-#import "@preview/touying:0.5.2": *
+#import "@preview/touying:0.5.5": *
 #import themes.metropolis: *
-#import "@preview/fontawesome:0.1.0": *
+#import "@preview/fontawesome:0.2.1": *
 // #import "@preview/ctheorems:1.1.2": *
 #import "@preview/numbly:0.1.0": numbly
 
@@ -34,7 +34,7 @@
 // #let definition = thmbox("definition", "Definition", inset: (x: 1.2em, top: 1em))
 // #let example = thmplain("example", "Example").with(numbering: none)
 // #let proof = thmproof("proof", "Proof")
-
+//
 #let mail(email) = {
   text(size: 1.2em)[#raw(email)]
 }
@@ -68,7 +68,6 @@
   ),
 )
 
-
 #set text(font: "Fira Sans", weight: "light", size: 20pt)
 #show math.equation: set text(font: "Noto Sans Math")
 
@@ -82,20 +81,13 @@
 )
 
 #show bibliography: set text(size: 0.75em)
-#show footnote.entry: it => {
-  text(size: 0.75em)[#it.note.body]
-}
-// #let fcite(clabel) = {
-//   footnote(cite(form: "full", label(clabel)))
-// }
+#show footnote.entry: set text(size: 0.75em)
 
 // #set heading(numbering: numbly("{1}.", default: "1.1"))
 
 #title-slide()
 
 // == Outline <touying:hidden>
-
-// #components.adaptive-columns(outline(title: none, indent: 1em))
 
 = Background
 
@@ -159,7 +151,7 @@ A single program $mono("P")$ describes the *collective self-org* behavior of the
   1. *resource-constrained* devices cannot satisfy all the components' requirements
   2. available *infrastructure* is not exploited to its full potential (performance vs cost)
 
-  Previous work /* #cite(label("FARABEGOLI2024")) */ tried to partition the _self-org/macroprogramming_ execution model but did not consider the *modularity* at the macro-program level.
+  Previous work #cite(label("FARABEGOLI2024")) tried to partition the _self-org/macroprogramming_ execution model but did not consider the *modularity* at the macro-program level.
 ][
   #figure(image("images/ac-monolithic-motivation.svg", height: 68%))
 ]
@@ -247,8 +239,8 @@ _Execution model_ *formalised* via #alert[#underline[operational semantics]].
 
 We setup #underline[three] incremental complex self-organising behaviours:
 
-1. *Gradient*: computation of the distances from a source to all the other devices // #fcite("DBLP:journals/computer/BealPV15")
-2. *SCR*: an implementation of the #alert[_self-organising coordination regions_] /* #cite(label("DBLP:journals/fgcs/PianiniCVN21")) */ pattern for splitting the network into sub-regions for handling problems in sub-spaces
+1. *Gradient*: computation of the distances from a source to all the other devices #cite(label("DBLP:journals/computer/BealPV15"))
+2. *SCR*: an implementation of the #alert[_self-organising coordination regions_] #cite(label("DBLP:journals/fgcs/PianiniCVN21")) pattern for splitting the network into sub-regions for handling problems in sub-spaces
 3. *Rescue scenario*: a city event scenario where people participate in the event and when an emergency occurs, a rescue team intervenes to help the people
 
 // ==== Objective
