@@ -87,7 +87,7 @@
   ]
   #quote[Shift from a #underline[device-centric] to a #alert[collective-centric] view of the system.]
 
-  #align(center)[#underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") as a way to define such applications.]
+  // #align(center)[#underline[_Aggregate computing_] #fcite("DBLP:journals/computer/BealPV15") as a way to define such applications.]
 ]
 
 // #slide(title: "Self-org Computational Model")[
@@ -259,10 +259,12 @@
     #side-by-side(columns: (1fr, auto), gutter: 2em)[
       - Functions *composition*
       - _(macro)_program executed by #alert[all the end-devices]
-
-      #only("2")[
+      #v(0.5em)
+      #uncover("2")[
         #align(center)[
-          How to _intelligently_ exploit the #alert[#underline[continuum]]?
+          #box(fill: rgb("EB801A35"), outset: 0.75em, radius: 0.5em)[
+            How to _intelligently_ exploit the #alert[#underline[continuum]]?
+          ]
         ]
       ]
     ][
